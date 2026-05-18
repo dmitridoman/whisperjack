@@ -1,0 +1,49 @@
+{
+  "name": "transcribe",
+  "version": "0.1.0",
+  "description": "Turn any video or audio file into a Whisper transcript JSON, in one command. Powered by whisper.cpp.",
+  "bin": {
+    "transcribe": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts",
+    "prepare": "tsup",
+    "prepublishOnly": "tsup"
+  },
+  "keywords": [
+    "whisper",
+    "whisper.cpp",
+    "transcribe",
+    "transcription",
+    "speech-to-text",
+    "stt",
+    "subtitles",
+    "ffmpeg",
+    "cli"
+  ],
+  "author": "Dmitri Doman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitridoman/transcribe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmitridoman/transcribe/issues"
+  },
+  "homepage": "https://github.com/dmitridoman/transcribe#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0"
+  }
+}
