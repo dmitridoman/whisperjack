@@ -1,4 +1,4 @@
-# transcribe
+# whisperjack
 
 One command. Takes any video or audio file (mp4, mov, mkv, mp3, m4a, wav, flac, …), runs it through [whisper.cpp](https://github.com/ggerganov/whisper.cpp), and writes a JSON transcript with per-segment timestamps. Metal-accelerated on Apple Silicon.
 
@@ -16,23 +16,23 @@ No install — run straight from npm:
 
 ```bash
 # default: large-v3-turbo-q5_0 (multilingual, near-SOTA, fast)
-npx transcribe meeting.mp4
+npx whisperjack meeting.mp4
 
 # pick a smaller / English-only model
-npx transcribe lecture.m4a --model base.en
+npx whisperjack lecture.m4a --model base.en
 
 # control language hint + output path
-npx transcribe podcast.mp3 --language en --output transcript.json
+npx whisperjack podcast.mp3 --language en --output transcript.json
 
 # keep the intermediate 16kHz WAV and stream raw whisper-cli output
-npx transcribe video.mov --keep-audio --verbose
+npx whisperjack video.mov --keep-audio --verbose
 ```
 
 Or install globally:
 
 ```bash
-npm i -g transcribe
-transcribe meeting.mp4
+npm i -g whisperjack
+whisperjack meeting.mp4
 ```
 
 ## Output
@@ -70,7 +70,7 @@ A JSON file written next to the input (or to `--output`):
 
 ## Models
 
-Downloaded on first use to `~/Library/Caches/transcribe/models/` (macOS) or `~/.cache/transcribe/models/` (Linux). Cached forever after.
+Downloaded on first use to `~/Library/Caches/whisperjack/models/` (macOS) or `~/.cache/whisperjack/models/` (Linux). Cached forever after.
 
 | Model | Size | Notes |
 | --- | --- | --- |
@@ -78,10 +78,10 @@ Downloaded on first use to `~/Library/Caches/transcribe/models/` (macOS) or `~/.
 | `base.en` / `base` | ~150 MB | good for quick English transcripts |
 | `small.en` / `small` | ~500 MB | balanced |
 | `medium.en` / `medium` | ~1.5 GB | high accuracy, slower |
-| `large-v3-turbo-q5_0` ⭐ | ~870 MB | **default** — near-SOTA, multilingual, fast on Apple Silicon |
+| `large-v3-turbo-q5_0` ⭐ | ~547 MB | **default** — near-SOTA, multilingual, fast on Apple Silicon |
 | `large-v3` | ~3 GB | highest accuracy, slowest, multilingual |
 
-Run `transcribe --help` for the full list of known models. Anything else is rejected to keep downloads scoped to known whisper.cpp artifacts.
+Run `whisperjack --help` for the full list of known models. Anything else is rejected to keep downloads scoped to known whisper.cpp artifacts.
 
 ## How it works
 

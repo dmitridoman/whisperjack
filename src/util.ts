@@ -6,10 +6,10 @@ import { randomBytes } from "node:crypto";
 export function cacheDir(): string {
   const home = os.homedir();
   if (process.platform === "darwin") {
-    return path.join(home, "Library", "Caches", "transcribe");
+    return path.join(home, "Library", "Caches", "whisperjack");
   }
   const xdg = process.env.XDG_CACHE_HOME;
-  return path.join(xdg && xdg.startsWith("/") ? xdg : path.join(home, ".cache"), "transcribe");
+  return path.join(xdg && xdg.startsWith("/") ? xdg : path.join(home, ".cache"), "whisperjack");
 }
 
 export function modelsDir(): string {
@@ -18,12 +18,12 @@ export function modelsDir(): string {
 
 export function tmpWavPath(): string {
   const stamp = `${process.pid}-${randomBytes(4).toString("hex")}`;
-  return path.join(os.tmpdir(), `transcribe-${stamp}.wav`);
+  return path.join(os.tmpdir(), `whisperjack-${stamp}.wav`);
 }
 
 export function tmpWhisperOutPrefix(): string {
   const stamp = `${process.pid}-${randomBytes(4).toString("hex")}`;
-  return path.join(os.tmpdir(), `transcribe-${stamp}`);
+  return path.join(os.tmpdir(), `whisperjack-${stamp}`);
 }
 
 export async function checkBinary(name: string): Promise<boolean> {

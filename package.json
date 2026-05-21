@@ -1,9 +1,9 @@
 {
-  "name": "transcribe",
+  "name": "whisperjack",
   "version": "0.1.0",
   "description": "Turn any video or audio file into a Whisper transcript JSON, in one command. Powered by whisper.cpp.",
   "bin": {
-    "transcribe": "dist/index.js"
+    "whisperjack": "dist/index.js"
   },
   "files": [
     "dist",
@@ -31,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmitridoman/transcribe.git"
+    "url": "git+https://github.com/dmitridoman/whisperjack.git"
   },
   "bugs": {
-    "url": "https://github.com/dmitridoman/transcribe/issues"
+    "url": "https://github.com/dmitridoman/whisperjack/issues"
   },
-  "homepage": "https://github.com/dmitridoman/transcribe#readme",
+  "homepage": "https://github.com/dmitridoman/whisperjack#readme",
   "engines": {
     "node": ">=20"
   },

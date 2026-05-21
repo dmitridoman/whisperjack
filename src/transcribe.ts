@@ -37,7 +37,7 @@ export async function transcribe(input: string, opts: TranscribeOptions): Promis
   const modelPath = await resolveModel(opts.model);
 
   const wavPath = opts.keepAudio
-    ? path.join(path.dirname(absInput), `${path.basename(absInput, path.extname(absInput))}.transcribe.wav`)
+    ? path.join(path.dirname(absInput), `${path.basename(absInput, path.extname(absInput))}.whisperjack.wav`)
     : tmpWavPath();
 
   try {

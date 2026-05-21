@@ -9,16 +9,16 @@ import { DEFAULT_MODEL, KNOWN_MODELS } from "./model";
 const VERSION = "0.1.0";
 
 const HELP = `
-transcribe — turn any video or audio file into a Whisper transcript JSON
+whisperjack — turn any video or audio file into a Whisper transcript JSON
 
 Usage:
-  transcribe <input> [flags]
+  whisperjack <input> [flags]
 
 Examples:
-  transcribe meeting.mp4
-  transcribe lecture.m4a --model base.en
-  transcribe podcast.mp3 --language en --output transcript.json
-  transcribe video.mov --keep-audio --verbose
+  whisperjack meeting.mp4
+  whisperjack lecture.m4a --model base.en
+  whisperjack podcast.mp3 --language en --output transcript.json
+  whisperjack video.mov --keep-audio --verbose
 
 Flags:
   -o, --output <path>      where to write the JSON (default: <input>.json next to input)
@@ -30,7 +30,7 @@ Flags:
   -h, --help               show this help
   -v, --version            print version
 
-Models (downloaded on first use to ~/Library/Caches/transcribe/models/):
+Models (downloaded on first use to ~/Library/Caches/whisperjack/models/):
   ${KNOWN_MODELS.join(", ")}
 
 Prerequisites:
@@ -68,7 +68,7 @@ function parseCli(argv: string[]): CliOptions | { help: true } | { version: true
 
   const input = positionals[0];
   if (!input) {
-    throw new Error("Missing input file. Run `transcribe --help` for usage.");
+    throw new Error("Missing input file. Run `whisperjack --help` for usage.");
   }
   if (positionals.length > 1) {
     throw new Error(`Unexpected extra arguments: ${positionals.slice(1).join(" ")}`);
